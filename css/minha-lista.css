@@ -199,7 +199,9 @@ input:focus {
 
 .card-streaming {
     min-width: 400px;
+    max-width: 200px;
     background-color: #0c0c0c;
+    word-wrap: break-word;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -215,9 +217,14 @@ input:focus {
     transform: scale(1.05);
 }
 
-
 .card-streaming img {
    border-radius: 20px;
+   max-height: 300px;
+   object-fit: cover;
+}
+
+.card-streaming p {
+    color: #bcbcbc;
 }
 
 .botao-add{
