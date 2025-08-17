@@ -1,79 +1,271 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/minha-lista.css" />
-    <title>Manuflix</title>
-  </head>
 
-  <body>
-    <header class="cabecalho">
-      <a href="#"
-        ><img
-          class="cabecalho-imagem"
-          src="img/manuflix.png"
-          alt="Logo do Manuflix"
-      /></a>
-      <nav class="cabecalho-menu">
-        <a class="cabecalho-menu-item" href="#">Pesquisar</a>
-        <a class="cabecalho-menu-item" href="minha-lista.html">Minha lista</a>
-        <a class="cabecalho-menu-item" href="#">Sobre</a>
-      </nav>
-    </header>
 
-    <main class="conteudo">
-      <section class="destaque-lista">
-        <h1 class="titulo-lista">Minha Lista</h1>
-        <p id="paragrafo-lista" class="paragrafo-lista"></p>
-
-        <div class="lista-actions">
-          <button id="addStreaming" class="botao-add">
-            Adicionar filme/série
-          </button>
-        </div>
-      </section>
-
-      <section class="catalogo">
-        <div class="linha-cards"></div>
-      </section>
-
-      <div class="modal-cadastro-streaming">
-        <h2 style="color: #fff">Adicionar Filme/Série</h2>
-        <input
-          type="text"
-          id="nomeStreaming"
-          placeholder="Nome do filme/série"
+    <!DOCTYPE html>
+    <html lang="pt-br">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
-        <button id="salvarStreaming">Salvar</button>
-        <button id="cancelarStreaming">Cancelar</button>
-      </div>
-    </main>
+        <link rel="stylesheet" href="css/minha-lista.css" />
+        <title>Manuflix</title>
+      </head>
 
-    <footer class="rodape"></footer>
+      <body>
+        <header class="cabecalho">
+          <a href="#"
+            ><img
+              class="cabecalho-imagem"
+              src="img/manuflix.png"
+              alt="Logo do Manuflix"
+          /></a>
+          <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item" href="#">Pesquisar</a>
+            <a class="cabecalho-menu-item" href="minha-lista.html"
+              >Minha lista</a
+            >
+            <a class="cabecalho-menu-item" href="#">Sobre</a>
+          </nav>
+        </header>
 
-    <script>
-      const adicionarStreaming = document.querySelector("#addStreaming");
-      const modalAdicionarStreaming = document.querySelector(".modal-cadastro-streaming");
+        <main class="conteudo">
+          <section class="destaque-lista">
+            <h1 class="titulo-lista">Minha Lista</h1>
+            <p id="paragrafo-lista" class="paragrafo-lista"></p>
 
-      adicionarStreaming.addEventListener("click", function () {
-        modalAdicionarStreaming.style.display = "block";
-      });
+            <div class="lista-actions">
+              <button id="addStreaming" class="botao-add">
+                Adicionar filme/série
+              </button>
+            </div>
+          </section>
 
-      let lista = [];
+          <section class="catalogo-lista">
+            <h2 style="color: #fff">Filmes</h2>
+            <div class="filme-cards">
+                
+            </div>
+            <h2 style="color: #fff">Séries</h2>
+            <div class="series-cards">
 
-      if (lista.length === 0) {
-        document.getElementById("paragrafo-lista").innerText =
-          "Sua lista está vazia. Adicione filmes e séries para começar!";
-      } else {
-        document.getElementById("paragrafo-lista").innerText =
-          "Aqui estão os filmes e séries que você adicionou à sua lista.";
-      }
-    </script>
+            </div>
+          </section>
+
+          <div class="overlay"></div>
+          <div class="modal-cadastro-streaming">
+            <h2 style="color: #fff">Adicionar Filme/Série</h2>
+
+            <div style="padding: 10px 0">
+              <p class="required" style="color: #fff">
+                Escolha o tipo de conteúdo:
+              </p>
+              <input
+                class="input-radio"
+                type="radio"
+                id="serie"
+                name="tipo"
+                value="serie"
+              />
+              <label for="serie" style="color: #fff">Série</label>
+
+              <input
+                class="input-radio"
+                type="radio"
+                id="filme"
+                name="tipo"
+                value="filme"
+              />
+              <label for="filme" style="color: #fff">Filme</label><br />
+            </div>
+
+            <div style="padding: 10px 0">
+              <label class="required" for="nomeStreaming" style="color: #fff"
+                >Nome do conteúdo</label
+              >
+              <input
+                class="input"
+                type="text"
+                id="nomeStreaming"
+                placeholder="the office"
+              />
+            </div>
+
+            <div style="padding: 10px 0">
+              <label
+                class="required"
+                for="descricaoStreaming"
+                style="color: #fff"
+                >Descrição do conteúdo
+              </label>
+              <input
+                class="input"
+                type="text"
+                id="descricaoStreaming"
+                placeholder="Uma comédia sobre escritório"
+              />
+            </div>
+
+            <div style="padding: 10px 0">
+              <label class="required" for="imagemStreaming" style="color: #fff"
+                >Imagem do conteúdo</label
+              >
+              <input
+                class="input"
+                type="text"
+                id="imagemStreaming"
+                placeholder="URL da imagem"
+              />
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <button class="button-cancelar" id="cancelarStreaming">
+                Cancelar
+              </button>
+              <button class="button-salvar" id="salvarStreaming">Salvar</button>
+            </div>
+          </div>
+        </main>
+
+        <footer class="rodape"></footer>
+
+        <script>
+          let listaStreamings =
+            JSON.parse(localStorage.getItem("listaStreamings")) || [];
+
+          const adicionarStreaming = document.querySelector("#addStreaming");
+          const cancelarStreaming =
+            document.querySelector("#cancelarStreaming");
+          const salvarStreaming = document.querySelector("#salvarStreaming");
+
+          salvarStreaming.addEventListener("click", function () {
+            const tipoStreaming = document.querySelector(
+              'input[name="tipo"]:checked'
+            ).value;
+            const nomeStreaming =
+              document.querySelector("#nomeStreaming").value;
+            const descricaoStreaming = document.querySelector(
+              "#descricaoStreaming"
+            ).value;
+            const imagemStreaming =
+              document.querySelector("#imagemStreaming").value;
+
+            const novoStreaming = {
+              tipo: tipoStreaming,
+              nome: nomeStreaming,
+              descricao: descricaoStreaming,
+              imagem: imagemStreaming,
+            };
+
+            listaStreamings.push(novoStreaming);
+            localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
+
+            modalAdicionarStreaming.style.display = "none";
+            overlay.style.display = "none";
+
+            location.reload();
+          });
+
+          const modalAdicionarStreaming = document.querySelector(
+            ".modal-cadastro-streaming"
+          );
+          const overlay = document.querySelector(".overlay");
+
+          adicionarStreaming.addEventListener("click", function () {
+            modalAdicionarStreaming.style.display = "block";
+            overlay.style.display = "block";
+          });
+
+          cancelarStreaming.addEventListener("click", function () {
+            modalAdicionarStreaming.style.display = "none";
+            overlay.style.display = "none";
+          });
+
+          console.log(listaStreamings);
+
+          const filmeCards = document.getElementsByClassName("filme-cards")[0];
+          const serieCards = document.getElementsByClassName("series-cards")[0];
+
+          listaStreamings.forEach((streaming) => {
+            const card = document.createElement("div");
+            card.classList.add("card-streaming");
+            card.id = `streaming-${listaStreamings.indexOf(streaming)}`;
+            card.innerHTML = `
+              <img src="${streaming.imagem}" alt="${streaming.nome}" />
+              <h3 style="color: white">${streaming.nome}</h3>
+              <p style="color: white">${streaming.descricao}</p>
+              <div class="acoes">
+                <button class="excluir-streaming" id="excluir-streaming-${listaStreamings.indexOf(streaming)}">Excluir</button>
+                <button class="editar-streaming" id="editar-streaming-${listaStreamings.indexOf(streaming)}">Editar</button>
+              </div>
+            `;
+
+            if (streaming.tipo === "filme") {
+              filmeCards.appendChild(card);
+            } else if (streaming.tipo === "serie") {
+              serieCards.appendChild(card);
+            }
+          });
+
+          const botoesExcluir = document.querySelectorAll("[id^='excluir-streaming-']");
+          botoesExcluir.forEach(botao => {
+            botao.addEventListener("click", function () {
+              const index = this.id.split("-").pop();
+              listaStreamings.splice(index, 1);
+              localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
+              location.reload();
+            });
+          });
+
+          const botoesEditar = document.querySelectorAll("[id^='editar-streaming-']");
+          botoesEditar.forEach(botao => {
+            botao.addEventListener("click", function () {
+              const index = this.id.split("-").pop();
+              const streaming = listaStreamings[index];
+              document.querySelector("#nomeStreaming").value = streaming.nome;
+              document.querySelector("#descricaoStreaming").value = streaming.descricao;
+              document.querySelector("#imagemStreaming").value = streaming.imagem;
+              document.querySelector(`input[name="tipo"][value="${streaming.tipo}"]`).checked = true;
+              modalAdicionarStreaming.style.display = "block";
+              overlay.style.display = "block";
+            });
+          });
+
+          function atualizarParagrafo() {
+            const paragrafo = document.getElementById("paragrafo-lista");
+            if (listaStreamings.length === 0) {
+              paragrafo.innerText =
+                "Sua lista está vazia. Adicione filmes e séries para começar!";
+            } else {
+              paragrafo.innerText =
+                "Aqui estão os filmes e séries que você adicionou à sua lista.";
+            }
+          }
+
+           function atualizarFilmes() {
+
+           const filmes = listaStreamings.filter(streaming => streaming.tipo === "filme");
+
+            if (filmes.length === 0) {
+              filmeCards.innerHTML =
+                "<p style='color: white;'>Nenhum filme cadastrado!</p>";
+            } 
+          }
+
+           function atualizarSeries() {
+            const series = listaStreamings.filter(streaming => streaming.tipo === "serie");
+
+            if (series.length === 0) {
+              serieCards.innerHTML =
+                "<p style='color: white;'>Nenhuma série cadastrada!</p>";
+            } 
+          }
+          atualizarParagrafo();
+          atualizarFilmes();
+          atualizarSeries();
+        </script>
+      </body>
+    </html>
   </body>
 </html>

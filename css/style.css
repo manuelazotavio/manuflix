@@ -129,26 +129,27 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 80px;
+    padding: 5vw;
     color: white;
 }
 
 .destaque .titulo-serie {
-    width: 300px;
-    margin-bottom: 20px;
+    width: 50%;
+    max-width: 300px;
+    margin-bottom: 1em;
 }
 
 .destaque .descricao {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 20px;
+    font-size: clamp(14px, 2vw, 18px);
+    max-width: 90%;
+    margin-bottom: 1em;
 }
 
 .botoes button {
     margin-right: 15px;
-    padding: 12px 25px;
-    font-size: 16px;
+    padding: 0.8em 1.5em;
+    font-size: clamp(14px, 1.5vw, 16px);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -187,16 +188,18 @@ body{
     display: flex;
     gap: 15px;
     padding-bottom: 10px;
+    overflow-x: auto;
 }
 
 .card {
-    min-width: 400px;
+    min-width: 250px;
     height: 250px;
     background-color: #333;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s;
+    flex-shrink: 0;
 }
 
 .card:hover {
@@ -209,3 +212,25 @@ body{
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    .cabecalho-menu{
+        gap: 20px;
+    }
+
+    .destaque {
+        padding: 5vw 3vw;
+    }
+
+    .destaque .titulo-serie {
+        width: 70%;
+    }
+
+    .destaque .descricao {
+        font-size: 16px;
+    }
+
+    .botoes button {
+        padding: 0.5em 1em;
+        font-size: 14px;
+    }
+}
