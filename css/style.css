@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 100%;
+    background-color: #1f1f1f
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px;
+}
+
+.cabecalho-imagem{
+    width: 100px;
+}
+
+.cabecalho-menu{
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho-menu-item{
+    font-family: 'Poppins', sans-serif;
+    color: #FFF2e7;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.conteudo{
+    margin-bottom: 45px;
+}
+
+.conteudo-principal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.titulo-serie-principal{
+    width: 400px;
+}
+
+.conteudo-principal-escrito{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.conteudo-principal-escrito-titulo{
+    font-family: 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 50px;
+    color: #FFF2e7;
+}
+
+.conteudo-principal-escrito-subtitulo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ecd6c4;
+}
+
+.conteudo-principal-escrito-botao{
+    width: 180px;
+    height: 60px;
+    background-color: #ecd6c4;
+    border-radius: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #85584e;
+}
+
+.conteudo-principal-imagem{
+    height: 400px;
+}
+
+.conteudo-secundario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.conteudo-secundario-titulo{
+    border-top: 0.4px solid #FFF2e7;
+    padding-top: 30px;
+    font-family: 'Poppins', cursive;
+    font-weight: 400;
+    font-size: 25px;
+    color: #FFF2e7;
+}
+
+.conteudo-secundario-paragrafo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ecd6c4;
+}
+
+/* Seção de destaque (banner principal) */
+.destaque {
+    position: relative;
+    height: 70vh;
+    background: url('../img/banner-theoffice.jpg') center center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 50px;
+    color: white;
+}
+
+.destaque .titulo-serie {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.destaque .descricao {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.botoes button {
+    margin-right: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao-assistir {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.botao-info {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+    font-weight: bold;
+}
+
+.catalogo {
+    padding: 20px 40px;
+}
+
+.catalogo h2 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+
+.linha-cards {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.card {
+    min-width: 180px;
+    height: 250px;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
