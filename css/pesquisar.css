@@ -1,0 +1,17 @@
+.input-pesquisa{
+  
+    background-color: #323232;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 12px 15px;
+    width: 50%;
+    box-sizing: border-box;
+
+}
+
+.input-pesquisa::placeholder{
+    color: rgb(202, 202, 202);
+    font-family: 'Poppins';
+    font-size: 14px;
+}
