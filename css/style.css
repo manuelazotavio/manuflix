@@ -26,14 +26,19 @@ body{
 
 .cabecalho-menu{
     display: flex;
-    gap: 30px;
+    gap: 80px;
 }
 
 .cabecalho-menu-item{
     font-family: 'Poppins', sans-serif;
     color: #FFF2e7;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.cabecalho-menu-item:hover{
+    transform: scale(1.05);
 }
 
 .conteudo{
@@ -110,7 +115,6 @@ body{
     color: #ecd6c4;
 }
 
-/* Seção de destaque (banner principal) */
 .destaque {
     position: relative;
     height: 70vh;
