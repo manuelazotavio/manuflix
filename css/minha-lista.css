@@ -259,7 +259,7 @@ input:focus {
     margin-top: 20px;
 }
 
-.button-salvar{
+.button-salvar, .excluir-streaming, .editar-streaming{
     margin-right: 15px;
     padding: 7px 20px;
     font-size: 14px;
@@ -274,7 +274,7 @@ input:focus {
     margin-top: 20px;
 }
 
-.modal-cadastro-streaming{
+.modal-cadastro-streaming, .modal-edicao-streaming{
     background-color: #333;
     position: fixed;
     top: 50%;

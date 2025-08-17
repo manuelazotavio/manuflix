@@ -55,7 +55,7 @@
           </section>
 
           <div class="overlay"></div>
-          <div class="modal-cadastro-streaming">
+           <div class="modal-edicao-streaming">
             <h2 style="color: #fff">Adicionar Filme/Série</h2>
 
             <div style="padding: 10px 0">
@@ -123,6 +123,77 @@
               <button class="button-cancelar" id="cancelarStreaming">
                 Cancelar
               </button>
+              <button class="button-salvar" id="salvarEdicaoStreaming">Salvar</button>
+            </div>
+          </div>
+          <div class="modal-cadastro-streaming">
+            <h2 style="color: #fff">Adicionar Filme/Série</h2>
+
+            <div style="padding: 10px 0">
+              <p class="required" style="color: #fff">
+                Escolha o tipo de conteúdo:
+              </p>
+              <input
+                class="input-radio"
+                type="radio"
+                id="serie"
+                name="tipo"
+                value="serie"
+              />
+              <label for="serie" style="color: #fff">Série</label>
+
+              <input
+                class="input-radio"
+                type="radio"
+                id="filme"
+                name="tipo"
+                value="filme"
+              />
+              <label for="filme" style="color: #fff">Filme</label><br />
+            </div>
+
+            <div style="padding: 10px 0">
+              <label class="required" for="nomeStreaming" style="color: #fff"
+                >Nome do conteúdo</label
+              >
+              <input
+                class="input"
+                type="text"
+                id="nomeStreaming"
+                placeholder="the office"
+              />
+            </div>
+
+            <div style="padding: 10px 0">
+              <label
+                class="required"
+                for="descricaoStreaming"
+                style="color: #fff"
+                >Descrição do conteúdo
+              </label>
+              <input
+                class="input"
+                type="text"
+                id="descricaoStreaming"
+                placeholder="Uma comédia sobre escritório"
+              />
+            </div>
+
+            <div style="padding: 10px 0">
+              <label class="required" for="imagemStreaming" style="color: #fff"
+                >Imagem do conteúdo</label
+              >
+              <input
+                class="input"
+                type="text"
+                id="imagemStreaming"
+                placeholder="URL da imagem"
+              />
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <button class="button-cancelar" id="cancelarStreamingCadastro">
+                Cancelar
+              </button>
               <button class="button-salvar" id="salvarStreaming">Salvar</button>
             </div>
           </div>
@@ -135,8 +206,8 @@
             JSON.parse(localStorage.getItem("listaStreamings")) || [];
 
           const adicionarStreaming = document.querySelector("#addStreaming");
-          const cancelarStreaming =
-            document.querySelector("#cancelarStreaming");
+          const cancelarStreamingCadastro =
+            document.querySelector("#cancelarStreamingCadastro");
           const salvarStreaming = document.querySelector("#salvarStreaming");
 
           salvarStreaming.addEventListener("click", function () {
@@ -177,7 +248,7 @@
             overlay.style.display = "block";
           });
 
-          cancelarStreaming.addEventListener("click", function () {
+          cancelarStreamingCadastro.addEventListener("click", function () {
             modalAdicionarStreaming.style.display = "none";
             overlay.style.display = "none";
           });
@@ -218,18 +289,52 @@
             });
           });
 
+          const modalEdicaoStreaming = document.querySelector(".modal-edicao-streaming");
           const botoesEditar = document.querySelectorAll("[id^='editar-streaming-']");
+
+          let indexEditado;
           botoesEditar.forEach(botao => {
             botao.addEventListener("click", function () {
               const index = this.id.split("-").pop();
+              indexEditado = index;
               const streaming = listaStreamings[index];
               document.querySelector("#nomeStreaming").value = streaming.nome;
               document.querySelector("#descricaoStreaming").value = streaming.descricao;
               document.querySelector("#imagemStreaming").value = streaming.imagem;
               document.querySelector(`input[name="tipo"][value="${streaming.tipo}"]`).checked = true;
-              modalAdicionarStreaming.style.display = "block";
+              modalEdicaoStreaming.style.display = "block";
               overlay.style.display = "block";
             });
+          });
+
+          const salvarEdicaoStreaming = document.querySelector("#salvarEdicaoStreaming");
+
+          salvarEdicaoStreaming.addEventListener("click", function () {
+            const tipoStreaming = document.querySelector(
+              'input[name="tipo"]:checked'
+            ).value;
+            const nomeStreaming =
+              document.querySelector("#nomeStreaming").value;
+            const descricaoStreaming = document.querySelector(
+              "#descricaoStreaming"
+            ).value;
+            const imagemStreaming =
+              document.querySelector("#imagemStreaming").value;
+
+            const novoStreaming = {
+              tipo: tipoStreaming,
+              nome: nomeStreaming,
+              descricao: descricaoStreaming,
+              imagem: imagemStreaming,
+            };
+
+            listaStreamings[indexEditado] = novoStreaming;
+            localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
+
+            modalEdicaoStreaming.style.display = "none";
+            overlay.style.display = "none";
+
+            location.reload();
           });
 
           function atualizarParagrafo() {
