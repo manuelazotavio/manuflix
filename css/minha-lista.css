@@ -9,8 +9,8 @@
 
 body{
     font-size: 100%;
-    background-color: #1f1f1f;   
-    font-family: 'Poppins', sans-serif;         
+    background-color: #1f1f1f;    
+    font-family: 'Poppins', sans-serif;      
 }
 
 .cabecalho{
@@ -37,7 +37,6 @@ body{
 }
 
 .cabecalho-menu-item{
-    font-family: 'Poppins', sans-serif;
     color: #ffffff;
     font-weight: 400;
     font-size: 18px;
@@ -70,14 +69,12 @@ body{
 }
 
 .conteudo-principal-escrito-titulo{
-    font-family: 'Poppins', cursive;
     font-weight: 400;
     font-size: 50px;
     color: #FFF2e7;
 }
 
 .conteudo-principal-escrito-subtitulo{
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ecd6c4;
@@ -88,7 +85,6 @@ body{
     height: 60px;
     background-color: #ecd6c4;
     border-radius: 14px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 20px;
     color: #85584e;
@@ -109,23 +105,19 @@ body{
 .conteudo-secundario-titulo{
     border-top: 0.4px solid #FFF2e7;
     padding-top: 30px;
-    font-family: 'Poppins', cursive;
     font-weight: 400;
     font-size: 25px;
     color: #FFF2e7;
 }
 
 .conteudo-secundario-paragrafo{
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ecd6c4;
 }
 
-.destaque {
+.destaque-lista {
     position: relative;
-    height: 100vh;
-    background: url('../img/banner-theoffice.png') center center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -133,13 +125,18 @@ body{
     color: white;
 }
 
-.destaque .titulo-serie {
-    width: 300px;
-    margin-bottom: 20px;
+.titulo-lista{
+    font-weight: 600;
+    font-size: 50px;
+    color: #FFF2e7;
 }
 
-.destaque .descricao {
-    font-family: 'Poppins', sans-serif;
+.paragrafo-lista{
+    font-weight: 400;
+    font-size: 20px;
+    color: #ecd6c4;
+}
+.destaque-lista .descricao {
     font-size: 18px;
     max-width: 600px;
     margin-bottom: 20px;
@@ -173,13 +170,12 @@ body{
     margin-top: 50px;
 }
 
-.catalogo {
+.catalogo-lista {
     padding: 40px 40px;
 }
 
 .catalogo h2 {
     color: white;
-    font-family: 'Poppins', sans-serif;
     margin-bottom: 15px;
 }
 
@@ -209,3 +205,34 @@ body{
     object-fit: cover;
 }
 
+.botao-add{
+    margin-right: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    transition: transform 0.3s;
+    margin-top: 20px;
+}
+
+.botao-add:hover{
+    transform: scale(1.05);
+}
+
+.modal-cadastro-streaming{
+    background-color: #333;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    min-width: 500px;
+    min-height: 300px;
+    border-radius: 20px;
+    display: none;
+    z-index: 1000;
+}

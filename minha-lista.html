@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/minha-lista.css" />
+    <title>Manuflix</title>
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <a href="#"
+        ><img
+          class="cabecalho-imagem"
+          src="img/manuflix.png"
+          alt="Logo do Manuflix"
+      /></a>
+      <nav class="cabecalho-menu">
+        <a class="cabecalho-menu-item" href="#">Pesquisar</a>
+        <a class="cabecalho-menu-item" href="minha-lista.html">Minha lista</a>
+        <a class="cabecalho-menu-item" href="#">Sobre</a>
+      </nav>
+    </header>
+
+    <main class="conteudo">
+      <section class="destaque-lista">
+        <h1 class="titulo-lista">Minha Lista</h1>
+        <p id="paragrafo-lista" class="paragrafo-lista"></p>
+
+        <div class="lista-actions">
+          <button id="addStreaming" class="botao-add">
+            Adicionar filme/série
+          </button>
+        </div>
+      </section>
+
+      <section class="catalogo">
+        <div class="linha-cards"></div>
+      </section>
+
+      <div class="modal-cadastro-streaming">
+        <h2 style="color: #fff">Adicionar Filme/Série</h2>
+        <input
+          type="text"
+          id="nomeStreaming"
+          placeholder="Nome do filme/série"
+        />
+        <button id="salvarStreaming">Salvar</button>
+        <button id="cancelarStreaming">Cancelar</button>
+      </div>
+    </main>
+
+    <footer class="rodape"></footer>
+
+    <script>
+      const adicionarStreaming = document.querySelector("#addStreaming");
+      const modalAdicionarStreaming = document.querySelector(".modal-cadastro-streaming");
+
+      adicionarStreaming.addEventListener("click", function () {
+        modalAdicionarStreaming.style.display = "block";
+      });
+
+      let lista = [];
+
+      if (lista.length === 0) {
+        document.getElementById("paragrafo-lista").innerText =
+          "Sua lista está vazia. Adicione filmes e séries para começar!";
+      } else {
+        document.getElementById("paragrafo-lista").innerText =
+          "Aqui estão os filmes e séries que você adicionou à sua lista.";
+      }
+    </script>
+  </body>
+</html>
