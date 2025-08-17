@@ -17,12 +17,12 @@ input:focus {
   outline: none; 
 }
 
-
 .cabecalho{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding: 18px;
     position: fixed;
     top: 0;
@@ -38,7 +38,7 @@ input:focus {
 
 .cabecalho-menu{
     display: flex;
-    gap: 80px;
+    gap: 20px;
 }
 
 .cabecalho-menu-item{
@@ -54,6 +54,7 @@ input:focus {
 
 .conteudo{
     margin-bottom: 45px;
+     margin-top: 120px;
     min-height: calc(100vh - 120px);
 }
 
@@ -127,7 +128,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 80px;
+    padding: 20px;
     color: white;
 }
 
@@ -177,7 +178,10 @@ input:focus {
 }
 
 .catalogo-lista {
-    padding: 40px 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .catalogo h2 {
@@ -185,22 +189,16 @@ input:focus {
     margin-bottom: 15px;
 }
 
-.filme-cards {
+.filme-cards, .series-cards {
     display: flex;
-    gap: 15px;
-    padding-bottom: 10px;
-}
-
-
-.series-cards {
-    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     padding-bottom: 10px;
 }
 
 .card-streaming {
-    min-width: 400px;
-    max-width: 200px;
+    min-width: 150px;
+    max-width: 100%;
     background-color: #0c0c0c;
     word-wrap: break-word;
     border-radius: 20px;
@@ -289,7 +287,8 @@ input:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    min-width: 500px;
+    width: 90%;
+    max-width: 500px;
     min-height: 300px;
     border-radius: 20px;
     display: none;
@@ -321,5 +320,38 @@ input:focus {
   color: #b8b8b8;    
   font-family: 'Poppins', sans-serif; 
   font-size: 14px;   
+}
 
+@media screen and (max-width: 900px){
+    .filme-cards, .series-cards {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .cabecalho-menu{
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .botao-add, .button-cancelar, .button-salvar, .excluir-streaming, .editar-streaming{
+        width: 100%;
+    }
+
+    .destaque-lista .titulo-lista{
+        font-size: 28px;
+    }
+
+    .paragrafo-lista{
+        font-size: 14px;
+    }
+
+    .card-streaming{
+        min-width: 100%;
+    }
+    .conteudo{
+         margin-top: 180px;
+    }
 }
