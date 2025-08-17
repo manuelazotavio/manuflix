@@ -1,83 +1,106 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Manuflix</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Manuflix</title>
-    </head>
-
-    <body>
-        <header class="cabecalho">
-        <a href="#"><img class="cabecalho-imagem" src="img/manuflix.png" alt="Logo do Manuflix"></a>
-            <nav class="cabecalho-menu">
-                <a class="cabecalho-menu-item" href="#">Pesquisar</a>
-                <a class="cabecalho-menu-item" href="minha-lista.html">Minha lista</a>
-                <a class="cabecalho-menu-item" href="#">Sobre</a>
-            </nav>
-        </header>
+  <body>
+    <header class="cabecalho">
+      <a href="#"
+        ><img
+          class="cabecalho-imagem"
+          src="img/manuflix.png"
+          alt="Logo do Manuflix"
+      /></a>
+      <nav class="cabecalho-menu">
+        <a class="cabecalho-menu-item" href="#">Pesquisar</a>
+        <a class="cabecalho-menu-item" href="minha-lista.html">Minha lista</a>
+        <a class="cabecalho-menu-item" href="#">Sobre</a>
+      </nav>
+    </header>
 
     <main class="conteudo">
+      <section class="destaque">
+        <img class="titulo-serie" src="./img/theoffice.png" alt="The Office" />
+        <p class="descricao">
+          Esta série hilária retrata o cotidiano caótico de funcionários
+          insatisfeitos e um chefe sem noção.
+        </p>
+        <div class="botoes">
+          <button class="botao-assistir">
+            <i style="margin-right: 5px" class="fa-solid fa-play"></i> Assistir
+          </button>
+          <button class="botao-info">
+            <i style="margin-right: 5px" class="fa-solid fa-info-circle"></i>
+            Mais informações
+          </button>
+        </div>
+        <div class="container-seta">
+          <i class="fa-solid fa-circle-arrow-down fa-lg"></i>
+        </div>
+      </section>
 
-        <section class="destaque">
-            <img class="titulo-serie" src="./img/theoffice.png" alt="The Office" />
-            <p class="descricao">
-            Esta série hilária retrata o cotidiano caótico de funcionários insatisfeitos e um chefe sem noção.
-            </p>
-            <div class="botoes">
-                <button class="botao-assistir"><i style="margin-right: 5px;" class="fa-solid fa-play"></i> Assistir</button>
-                <button class="botao-info"><i style="margin-right: 5px;"class="fa-solid fa-info-circle"></i> Mais informações</button>
-            </div>
-            <div class="container-seta">
-                <i class="fa-solid fa-circle-arrow-down fa-lg"></i>
-            </div>
-            
-        </section>
+      <section class="catalogo">
+        <h2>Populares</h2>
+        <div class="linha-cards">
+          <div class="card">
+            <img src="img/filme1.png" alt="Filme 1" />
+          </div>
+          <div class="card">
+            <img src="img/filme2.png" alt="Filme 2" />
+          </div>
+          <div class="card">
+            <img src="img/filme3.png" alt="Filme 3" />
+          </div>
+          <div class="card">
+            <img src="img/filme4.png" alt="Filme 4" />
+          </div>
+        </div>
+      </section>
 
-        <section class="catalogo">
-            <h2>Populares</h2>
-            <div class="linha-cards">
-                <div class="card">
-                    <img src="img/filme1.png" alt="Filme 1">
-                </div>
-                <div class="card">
-                    <img src="img/filme2.png" alt="Filme 2">
-                </div>
-                <div class="card">
-                    <img src="img/filme3.png" alt="Filme 3">
-                </div>
-                <div class="card">
-                    <img src="img/filme4.png" alt="Filme 4">
-                </div>
-            </div>
-        </section>
-
-        <section class="catalogo">
-            <h2>Lançamentos</h2>
-            <div class="linha-cards">
-                <div class="card">
-                    <img src="img/filme4.png" alt="Filme 4">
-                </div>
-                <div class="card">
-                    <img src="img/filme5.png" alt="Filme 5">
-                </div>
-                <div class="card">
-                    <img src="img/filme6.png" alt="Filme 6">
-                </div>
-                <div class="card">
-                    <img src="img/filme4.png" alt="Filme 7">
-                </div>
-            </div>
-        </section>
+      <section class="catalogo">
+        <h2>Lançamentos</h2>
+        <div class="linha-cards">
+          <div class="card">
+            <img src="img/filme4.png" alt="Filme 4" />
+          </div>
+          <div class="card">
+            <img src="img/filme5.png" alt="Filme 5" />
+          </div>
+          <div class="card">
+            <img src="img/filme6.png" alt="Filme 6" />
+          </div>
+          <div class="card">
+            <img src="img/filme4.png" alt="Filme 7" />
+          </div>
+        </div>
+      </section>
     </main>
 
-
-        <footer class="rodape">
-        
-        </footer>
-    </body>
-
-    </html>
+    <footer
+      class="rodape"
+      style="background: #111; color: #fff; padding: 20px; text-align: center"
+    >
+      <p>© 2025 Manuflix. Todos os direitos reservados.</p>
+      <div style="margin-top: 10px">
+        <a href="#" style="color: #fff; margin: 0 10px"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="#" style="color: #fff; margin: 0 10px"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="#" style="color: #fff; margin: 0 10px"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

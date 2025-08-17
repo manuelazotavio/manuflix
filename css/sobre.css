@@ -1,0 +1,122 @@
+.sobre-hero {
+  text-align: center;
+  color: #fff;
+}
+.sobre-hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.sobre-hero p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #bcbcbc;
+}
+
+.cards-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.card-sobre {
+  background: #0c0c0c;
+  border-radius: 20px;
+  width: 280px;
+  padding: 20px;
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+.card-sobre:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.card-sobre i {
+  font-size: 40px;
+  color: #f62a2acf;
+  margin-bottom: 15px;
+}
+.card-sobre h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff2e7;
+}
+.card-sobre p {
+  font-size: 16px;
+  color: #bcbcbc;
+}
+
+.history-sobre {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  padding: 40px 20px;
+}
+.history-sobre h2 {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.history-sobre p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #bcbcbc;
+  font-size: 18px;
+}
+
+.team-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.team-sobre h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  gap: 10px;
+}
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f62a2a;
+}
+.team-member h4 {
+  color: #fff2e7;
+  font-size: 20px;
+}
+.team-member p {
+  color: #bcbcbc;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sobre-hero h1 {
+    font-size: 36px;
+  }
+  .sobre-hero p {
+    font-size: 16px;
+  }
+  .cards-sobre,
+  .team-sobre,
+  .history-sobre {
+    flex-direction: column;
+    align-items: center;
+  }
+}

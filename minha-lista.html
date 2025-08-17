@@ -16,7 +16,7 @@
 
       <body>
         <header class="cabecalho">
-          <a href="/index.html"
+          <a href="index.html"
             ><img
               class="cabecalho-imagem"
               src="img/manuflix.png"
@@ -27,7 +27,7 @@
             <a class="cabecalho-menu-item" href="minha-lista.html"
               >Minha lista</a
             >
-            <a class="cabecalho-menu-item" href="#">Sobre</a>
+            <a class="cabecalho-menu-item" href="sobre.html">Sobre</a>
           </nav>
         </header>
 
@@ -37,7 +37,7 @@
             <p id="paragrafo-lista" class="paragrafo-lista"></p>
 
             <div class="lista-actions">
-              <button id="addStreaming" class="botao-add">
+              <button id="adicionar-streaming" class="botao-add">
                 Adicionar filme/série
               </button>
             </div>
@@ -55,9 +55,14 @@
           </section>
 
           <div class="overlay"></div>
+
+          <!-- comeco do modal de edicao -->
+
            <div class="modal-edicao-streaming">
             <h2 style="color: #fff">Adicionar Filme/Série</h2>
+            <form id="editar-streaming-form">
 
+            
             <div style="padding: 10px 0">
               <p class="required" style="color: #fff">
                 Escolha o tipo de conteúdo:
@@ -123,12 +128,18 @@
               <button class="button-cancelar" id="cancelarStreaming">
                 Cancelar
               </button>
-              <button class="button-salvar" id="salvarEdicaoStreaming">Salvar</button>
-            </div>
+              <button class="button-salvar" type="submit" id="salvar-edicao-streaming">Salvar</button>
+            </div> 
+          
+          </form>
           </div>
+        
+       
+
+        <!-- fim modal de edicao --> 
           <div class="modal-cadastro-streaming">
             <h2 style="color: #fff">Adicionar Filme/Série</h2>
-
+            <form id="criar-streaming-form">
             <div style="padding: 10px 0">
               <p class="required" style="color: #fff">
                 Escolha o tipo de conteúdo:
@@ -137,7 +148,7 @@
                 class="input-radio"
                 type="radio"
                 id="serie"
-                name="tipo"
+                name="tipo-cadastro"
                 value="serie"
               />
               <label for="serie" style="color: #fff">Série</label>
@@ -146,20 +157,20 @@
                 class="input-radio"
                 type="radio"
                 id="filme"
-                name="tipo"
+                name="tipo-cadastro"
                 value="filme"
               />
               <label for="filme" style="color: #fff">Filme</label><br />
             </div>
 
             <div style="padding: 10px 0">
-              <label class="required" for="nomeStreaming" style="color: #fff"
+              <label class="required" for="nome-streaming-cadastro" style="color: #fff"
                 >Nome do conteúdo</label
               >
               <input
                 class="input"
                 type="text"
-                id="nomeStreaming"
+                id="nome-streaming-cadastro"
                 placeholder="the office"
               />
             </div>
@@ -167,26 +178,26 @@
             <div style="padding: 10px 0">
               <label
                 class="required"
-                for="descricaoStreaming"
+                for="descricao-streaming-cadastro"
                 style="color: #fff"
                 >Descrição do conteúdo
               </label>
               <input
                 class="input"
                 type="text"
-                id="descricaoStreaming"
+                id="descricao-streaming-cadastro"
                 placeholder="Uma comédia sobre escritório"
               />
             </div>
 
             <div style="padding: 10px 0">
-              <label class="required" for="imagemStreaming" style="color: #fff"
+              <label class="required" for="imagem-streaming-cadastro" style="color: #fff"
                 >Imagem do conteúdo</label
               >
               <input
                 class="input"
                 type="text"
-                id="imagemStreaming"
+                id="imagem-streaming-cadastro"
                 placeholder="URL da imagem"
               />
             </div>
@@ -194,189 +205,18 @@
               <button class="button-cancelar" id="cancelarStreamingCadastro">
                 Cancelar
               </button>
-              <button class="button-salvar" id="salvarStreaming">Salvar</button>
+              <button class="button-salvar" type="submit" id="salvarStreaming">Salvar</button>
             </div>
+          </form>
           </div>
         </main>
 
-       <footer class="rodape" style="background:#111;color:#fff;padding:20px;text-align:center;">
-        <p>© 2025 Manuflix. Todos os direitos reservados.</p>
-        <div style="margin-top:10px;">
-            <a href="#" style="color:#fff;margin:0 10px;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color:#fff;margin:0 10px;"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color:#fff;margin:0 10px;"><i class="fab fa-instagram"></i></a>
-        </div>
-        </footer>
+        <footer class="rodape"></footer>
 
-        <script>
-          let listaStreamings =
-            JSON.parse(localStorage.getItem("listaStreamings")) || [];
-
-          const adicionarStreaming = document.querySelector("#addStreaming");
-          const cancelarStreamingCadastro =
-            document.querySelector("#cancelarStreamingCadastro");
-          const salvarStreaming = document.querySelector("#salvarStreaming");
-
-          salvarStreaming.addEventListener("click", function () {
-            const tipoStreaming = document.querySelector(
-              'input[name="tipo"]:checked'
-            ).value;
-            const nomeStreaming =
-              document.querySelector("#nomeStreaming").value;
-            const descricaoStreaming = document.querySelector(
-              "#descricaoStreaming"
-            ).value;
-            const imagemStreaming =
-              document.querySelector("#imagemStreaming").value;
-
-            const novoStreaming = {
-              tipo: tipoStreaming,
-              nome: nomeStreaming,
-              descricao: descricaoStreaming,
-              imagem: imagemStreaming,
-            };
-
-            listaStreamings.push(novoStreaming);
-            localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
-
-            modalAdicionarStreaming.style.display = "none";
-            overlay.style.display = "none";
-
-            location.reload();
-          });
-
-          const modalAdicionarStreaming = document.querySelector(
-            ".modal-cadastro-streaming"
-          );
-          const overlay = document.querySelector(".overlay");
-
-          adicionarStreaming.addEventListener("click", function () {
-            modalAdicionarStreaming.style.display = "block";
-            overlay.style.display = "block";
-          });
-
-          cancelarStreamingCadastro.addEventListener("click", function () {
-            modalAdicionarStreaming.style.display = "none";
-            overlay.style.display = "none";
-          });
-
-          console.log(listaStreamings);
-
-          const filmeCards = document.getElementsByClassName("filme-cards")[0];
-          const serieCards = document.getElementsByClassName("series-cards")[0];
-
-          listaStreamings.forEach((streaming) => {
-            const card = document.createElement("div");
-            card.classList.add("card-streaming");
-            card.id = `streaming-${listaStreamings.indexOf(streaming)}`;
-            card.innerHTML = `
-              <img src="${streaming.imagem}" alt="${streaming.nome}" />
-              <h3 style="color: white">${streaming.nome}</h3>
-              <p>${streaming.descricao}</p>
-              <div class="acoes">
-                <button class="excluir-streaming" id="excluir-streaming-${listaStreamings.indexOf(streaming)}">Excluir</button>
-                <button class="editar-streaming" id="editar-streaming-${listaStreamings.indexOf(streaming)}">Editar</button>
-              </div>
-            `;
-
-            if (streaming.tipo === "filme") {
-              filmeCards.appendChild(card);
-            } else if (streaming.tipo === "serie") {
-              serieCards.appendChild(card);
-            }
-          });
-
-          const botoesExcluir = document.querySelectorAll("[id^='excluir-streaming-']");
-          botoesExcluir.forEach(botao => {
-            botao.addEventListener("click", function () {
-              const index = this.id.split("-").pop();
-              listaStreamings.splice(index, 1);
-              localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
-              location.reload();
-            });
-          });
-
-          const modalEdicaoStreaming = document.querySelector(".modal-edicao-streaming");
-          const botoesEditar = document.querySelectorAll("[id^='editar-streaming-']");
-
-          let indexEditado;
-          botoesEditar.forEach(botao => {
-            botao.addEventListener("click", function () {
-              const index = this.id.split("-").pop();
-              indexEditado = index;
-              const streaming = listaStreamings[index];
-              document.querySelector("#nomeStreaming").value = streaming.nome;
-              document.querySelector("#descricaoStreaming").value = streaming.descricao;
-              document.querySelector("#imagemStreaming").value = streaming.imagem;
-              document.querySelector(`input[name="tipo"][value="${streaming.tipo}"]`).checked = true;
-              modalEdicaoStreaming.style.display = "block";
-              overlay.style.display = "block";
-            });
-          });
-
-          const salvarEdicaoStreaming = document.querySelector("#salvarEdicaoStreaming");
-
-          salvarEdicaoStreaming.addEventListener("click", function () {
-            const tipoStreaming = document.querySelector(
-              'input[name="tipo"]:checked'
-            ).value;
-            const nomeStreaming =
-              document.querySelector("#nomeStreaming").value;
-            const descricaoStreaming = document.querySelector(
-              "#descricaoStreaming"
-            ).value;
-            const imagemStreaming =
-              document.querySelector("#imagemStreaming").value;
-
-            const novoStreaming = {
-              tipo: tipoStreaming,
-              nome: nomeStreaming,
-              descricao: descricaoStreaming,
-              imagem: imagemStreaming,
-            };
-
-            listaStreamings[indexEditado] = novoStreaming;
-            localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
-
-            modalEdicaoStreaming.style.display = "none";
-            overlay.style.display = "none";
-
-            location.reload();
-          });
-
-          function atualizarParagrafo() {
-            const paragrafo = document.getElementById("paragrafo-lista");
-            if (listaStreamings.length === 0) {
-              paragrafo.innerText =
-                "Sua lista está vazia. Adicione filmes e séries para começar!";
-            } else {
-              paragrafo.innerText =
-                "Aqui estão os filmes e séries que você adicionou à sua lista.";
-            }
-          }
-
-           function atualizarFilmes() {
-
-           const filmes = listaStreamings.filter(streaming => streaming.tipo === "filme");
-
-            if (filmes.length === 0) {
-              filmeCards.innerHTML =
-                "<p style='color: white;'>Nenhum filme cadastrado!</p>";
-            } 
-          }
-
-           function atualizarSeries() {
-            const series = listaStreamings.filter(streaming => streaming.tipo === "serie");
-
-            if (series.length === 0) {
-              serieCards.innerHTML =
-                "<p style='color: white;'>Nenhuma série cadastrada!</p>";
-            } 
-          }
-          atualizarParagrafo();
-          atualizarFilmes();
-          atualizarSeries();
-        </script>
+    
       </body>
     </html>
 
+    <script src="js/minha-lista.js"></script>
+  </body>
+</html>

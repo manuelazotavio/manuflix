@@ -18,6 +18,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding: 18px;
     position: fixed;
     top: 0;
@@ -37,7 +38,6 @@ body{
 }
 
 .cabecalho-menu-item{
-    font-family: 'Poppins', sans-serif;
     color: #ffffff;
     font-weight: 400;
     font-size: 18px;
@@ -50,6 +50,7 @@ body{
 
 .conteudo{
     margin-bottom: 45px;
+    min-height: calc(100vh - 120px);
 }
 
 .conteudo-principal{
@@ -58,7 +59,6 @@ body{
     align-items: center;
     justify-content: flex-start;
 }
-
 .titulo-serie-principal{
     width: 400px;
 }
