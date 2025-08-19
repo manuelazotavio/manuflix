@@ -1,6 +1,6 @@
 let listaStreamings = JSON.parse(localStorage.getItem("listaStreamings")) || [];
 
-// cadastrar um streaming
+// logica para cadastrar um streaming
 
 const modalAdicionarStreaming = document.querySelector(
   ".modal-cadastro-streaming"
