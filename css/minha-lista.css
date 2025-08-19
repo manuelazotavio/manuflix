@@ -1,18 +1,11 @@
-
-
-.conteudo{
-    margin-bottom: 45px;
-     margin-top: 120px;
-    min-height: calc(100vh - 120px);
+.container{
+    margin-top: 300px;
 }
-
-
 .destaque-lista {
-    position: relative;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
     color: white;
 }
 
@@ -231,7 +224,5 @@
     .card-streaming{
         min-width: 100%;
     }
-    .conteudo{
-         margin-top: 180px;
-    }
+
 }
