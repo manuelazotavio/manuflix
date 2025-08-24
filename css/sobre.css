@@ -12,6 +12,7 @@
   max-width: 800px;
   margin: 0 auto;
   color: #bcbcbc;
+  padding: 10px;
 }
 
 .cards-sobre {
@@ -19,7 +20,6 @@
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  padding: 40px 20px;
 }
 
 .card-sobre {

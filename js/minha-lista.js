@@ -128,13 +128,17 @@ const editarForm = document.querySelector("#editar-streaming-form"); //pega o fo
 
 editarForm.addEventListener("submit", (event) => {
   event.preventDefault();
-const tipoStreaming = document.querySelector(
+
+  const tipoStreaming = document.querySelector(
     'input[name="tipo"]:checked'
   ).value;
+
   const nomeStreaming = document.querySelector("#nomeStreaming").value;
+
   const descricaoStreaming = document.querySelector(
     "#descricaoStreaming"
   ).value;
+
   const imagemStreaming = document.querySelector("#imagemStreaming").value;
 
   const novoStreaming = {
@@ -190,3 +194,5 @@ function atualizarSeries() {
 atualizarParagrafo();
 atualizarFilmes();
 atualizarSeries();
+
+

@@ -1,5 +1,6 @@
 .container{
     margin-top: 200px;
+    padding: 20px;
 }
 .destaque-lista {
     display: flex;

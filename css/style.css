@@ -12,7 +12,7 @@
 body{
     font-size: 100%;
     background-color: #1f1f1f;   
-    font-family: 'Poppins', sans-serif;         
+    font-family: -apple-system, BlinkMacSystemFont, 'Poppins', Roboto, 'Droid Sans', 'Helvetica Neue', sans-serif;      
     
 }
 
@@ -154,7 +154,7 @@ input:focus {
     }
 
     .destaque {
-        padding: 5vw 3vw;
+        padding: 10vw 10vw;
     }
 
     .destaque .titulo-serie {
@@ -165,8 +165,9 @@ input:focus {
         font-size: 16px;
     }
 
-    .botoes button {
-        padding: 0.5em 1em;
-        font-size: 14px;
+    .botoes  {
+       display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
