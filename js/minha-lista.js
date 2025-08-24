@@ -11,7 +11,6 @@ const overlay = document.querySelector(".overlay");
 const adicionarStreaming = document.querySelector("#adicionar-streaming"); //botao para adicionar um novo streaming
 
 adicionarStreaming.addEventListener("click", function () {
-  console.log("oi");
   modalAdicionarStreaming.style.display = "block"; //abre o modal de cadastrar q possui um form
   overlay.style.display = "block";
 });
@@ -20,7 +19,6 @@ const cadastrarForm = document.querySelector("#criar-streaming-form"); //pega o 
 
 cadastrarForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("to aqui");
 
   const tipoStreaming = document.querySelector(
     'input[name="tipo-cadastro"]:checked' //vai pegar o radio que está marcado
@@ -40,9 +38,6 @@ cadastrarForm.addEventListener("submit", (event) => {
     descricao: descricaoStreaming,
     imagem: imagemStreaming,
   };
-
-
-  console.log(novoStreaming);
 
   listaStreamings.push(novoStreaming);
 
@@ -87,7 +82,7 @@ listaStreamings.forEach((streaming) => {
 
   if (streaming.tipo === "filme") {
     filmeCards.appendChild(card); //se for um filme ja coloca na div correspondente
-  } else if (streaming.tipo === "serie") {
+  } else {
     serieCards.appendChild(card);
   }
 });
@@ -95,19 +90,17 @@ listaStreamings.forEach((streaming) => {
 document.addEventListener("click", (e) => {
   if (e.target.matches("[id^='excluir-streaming-']")) {
 
-    const index = e.target.id.split("-").pop();
+    index = e.target.id.split("-").pop();
 
     listaStreamings.splice(index, 1); //pega o id, e corta so 1 item da lista
-
+    
     localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
 
     location.reload();
   }
 
   if (e.target.matches("[id^='editar-streaming-']")) {
-    const index = e.target.id.split("-").pop();
-
-    indexEditado = index;
+    index = e.target.id.split("-").pop();
 
     const streaming = listaStreamings[index]; //acha no array o index q é pra editar
 
@@ -148,7 +141,7 @@ editarForm.addEventListener("submit", (event) => {
     imagem: imagemStreaming,
   };
 
-  listaStreamings[indexEditado] = novoStreaming;
+  listaStreamings[index] = novoStreaming;
   localStorage.setItem("listaStreamings", JSON.stringify(listaStreamings));
 
   modalEdicaoStreaming.style.display = "none";

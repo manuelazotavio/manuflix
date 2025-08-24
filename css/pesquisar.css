@@ -16,6 +16,15 @@
     font-size: 14px;
 }
 
+
+.catalogo-lista-pesquisar {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 50vh;
+}
+
 @media screen and (max-width: 768px) {
     .input-pesquisa{
         width: 100%;
